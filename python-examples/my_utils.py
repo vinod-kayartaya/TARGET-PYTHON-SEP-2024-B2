@@ -2,6 +2,23 @@
 A simple module with simple utility functions
 """
 
+import json
+
+
+def create_dict(keys:list, vals:list) -> dict:
+    return dict(zip(keys, vals))
+
+def print_json(obj, indent=None):
+    print(json.dumps(obj, indent=indent))
+
+def is_float(s):
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+
 def line(char='-', size=80):
     print(char * size)
 

@@ -1,0 +1,21 @@
+#! /Library/Frameworks/Python.framework/Versions/3.12/bin/python3
+import argparse
+
+# ./printtable --number=123 --limit=15
+# ./printtable --limit=15 --number=123
+# ./printtable --limit 15 --number 123
+# ./printtable --help
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='a small utility for printing multiplication table for the input')
+
+    parser.add_argument('--number', required=True, help='the input number for which the table is printed')
+    parser.add_argument('--limit', default=10, help='the limit up to which the table is printed')
+
+    args = parser.parse_args()
+
+    n = int(args.number)
+    limit = int(args.limit)
+
+    for i in range(1, limit+1):
+        print(f'{n} x {i} = {n*i}')
