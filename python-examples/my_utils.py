@@ -32,3 +32,15 @@ def dir2(arg):
         if not each_attr.startswith('_'):
             attrs.append(each_attr)
     return attrs
+
+
+def sum_of_nums(s: str) -> float:
+    if type(s) in (int, float):
+        return s
+    
+    if not isinstance(s, str):
+        raise ValueError('Parameter must be int/float/str')
+    
+    ar = s.split(',')
+    ar = [float(a) for a in ar if is_float(a)]
+    return sum(ar)
